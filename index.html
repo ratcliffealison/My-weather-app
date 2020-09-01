@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d6fabf73c0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card" id="app-box">
+        <div class="row" id="top-row">
+          <div class="col-4" id="current-location">
+            <h2 id="local-time">17:52</h2>
+            <h1 id="current-city">Zaragoza</h1>
+            <h3 id="current-date">Thursday 30th July</h3>
+          </div>
+          <div class="col-5" id="current-weather">
+            <i class="fas fa-circle" id="current-weather-icon"></i>
+            <h3 id="description">Clear skies</h3>
+            <span class="current-temp-conversion">
+              <h2 id="current-temp">40</h2>
+              <a class="btn" id="celcius-link" href="#">ºC</a>
+              <a class="btn" id="fahrenheit-link" href="#">ºF</a>
+            </span>
+          </div>
+          <div class="col-3">
+            <form id="city-search">
+              <input type="text" id="search-input" placeholder="change city" />
+              <input type="submit" id="search-submit" value="🔎" />
+            </form>
+            <button id="current-location-button">📍</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="middle-row">
+        <div class="col-1"></div>
+        <div class="col-2" id="one-day-ahead">
+          <div class="card forecast" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <i class="fas fa-cloud-sun forecast-icon"></i>
+              <p class="card-text">31ºC</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2" id="two-days-ahead">
+          <div class="card forecast" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">Saturday</h5>
+              <i class="fas fa-cloud-sun-rain forecast-icon"></i>
+              <p class="card-text">31ºC</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2" id="three-days-ahead">
+          <div class="card forecast" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">Sunday</h5>
+              <i class="fas fa-circle forecast-icon"></i>
+              <p class="card-text">36ºC</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2" id="four-days-ahead">
+          <div class="card forecast" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+              <i class="fas fa-cloud-rain forecast-icon"></i>
+              <p class="card-text">34ºC</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2" id="five-days-ahead">
+          <div class="card forecast" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+              <i class="fas fa-cloud-sun forecast-icon"></i>
+              <p class="card-text">40ºC</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row" id="bottom-row">
+        <div class="col-12">
+          <p class="coded-by">
+            coded by
+            <a href="http://www.linkedin.com/ratcliffealison" target="_blank">
+              Alison Ratcliffe
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

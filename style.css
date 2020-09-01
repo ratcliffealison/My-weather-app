@@ -1,0 +1,137 @@
+body {
+  font-family: "Lora", serif;
+}
+h1,
+h2,
+h3,
+p {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+a,
+a:visited,
+a:active {
+  color: #757575;
+  text-decoration: underline;
+}
+a:hover {
+  font-weight: bold;
+  color: #757575;
+  text-decoration: underline;
+}
+h1 {
+  font-size: xx-large;
+  font-weight: 900;
+}
+h2 {
+  font-weight: lighter;
+  font-size: medium;
+}
+h3 {
+  font-weight: lighter;
+}
+
+input {
+  background: rgba(234, 255, 208, 0.15);
+  color: #757575;
+  border: 2px solid #f38181;
+  border-radius: 3px;
+  padding: 5px;
+}
+input:focus {
+  background: #95e1d3;
+  transition-duration: 0.2s;
+  border: 2px solid #f38181;
+}
+button {
+  background: rgba(234, 255, 208, 0.15);
+  color: #757575;
+  border: 2px solid #f38181;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 10px 10px 4px -8px rgba(0, 0, 0, 0.57);
+}
+button:hover {
+  background: #95e1d3;
+  transition-duration: 0.4s;
+}
+button:active {
+  font-weight: bolder;
+}
+form {
+  margin: 5px;
+  text-align: right;
+}
+
+.forecast-icon {
+  font-size: 80px;
+  display: block;
+  color: #fce38a;
+  padding: 2px;
+}
+.change-city {
+  max-width: 80%;
+  display: inline;
+  margin: 0 0 10px 0;
+}
+.container {
+  margin-top: 30px;
+}
+
+.forecast {
+  background: #95e1d3;
+  color: #757575;
+  border: 2px solid #f38181;
+  text-align: center;
+}
+.forecast:hover {
+  border: 3px solid #f38181;
+  transition-duration: 0.4s;
+}
+
+#current-weather {
+  text-align: center;
+}
+#btn-link {
+  border-color: #f38181;
+}
+#current-weather-icon {
+  font-size: 140px;
+  display: block;
+  color: #fce38a;
+}
+#current-weather-icon:hover {
+  color: #f5d668;
+  transition-duration: 0.4s;
+}
+#current-temp-conversion {
+  display: inline;
+}
+
+#app-box {
+  background: rgba(234, 255, 208, 0.2);
+  border: 5px solid #f38181;
+}
+#activate-search {
+  display: inline;
+}
+#current-location {
+  text-align: right;
+}
+
+#current-weather {
+  text-align: center;
+}
+#top-row {
+  padding: 20px;
+  position: relative;
+}
+#middle-row {
+  padding: 10px;
+}
+#bottom-row {
+  text-align: right;
+}
