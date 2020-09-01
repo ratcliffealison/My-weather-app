@@ -64,7 +64,7 @@ function formatTime() {
 }
 formatTime();
 
-//Temperature
+//Temperature and city display from search
 let temperature = 0;
 function displayWeather(response) {
   console.log(response);
@@ -86,38 +86,23 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#search-input").value;
   searchCity(cityInput);
 }
-//location
+
 let citySearch = document.querySelector("#city-search");
 citySearch.addEventListener("submit", handleSubmit);
 
-//temperaure conversion
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp");
-  let farTemp = Math.round((temperature * 9) / 5 + 32);
-  temperatureElement.innerHTML = `${farTemp}`;
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = temperature;
-}
-function getWeatherCoord() {}
-
+//location weather
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${temperature}`;
-
   let currentLocation = document.querySelector("#current-city");
-
   currentLocation.innerHTML = response.data.name;
+  let weatherDescription = document.querySelector("#description");
+  weatherDescription.innerHTML = response.data.weather[0].main;
 }
 function showPosition(position) {
-  let apiKey = "c1839181c76825494afbe0248f476ab5";
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let units = "metric";
@@ -130,3 +115,17 @@ function getCurrentPosition() {
 
 let locationButton = document.querySelector("#current-location-button");
 locationButton.addEventListener("click", getCurrentPosition);
+
+//temperaure conversion- need to fix
+//function convertToFahrenheit(event) {
+// event.preventDefault();
+//  let temperatureElement = document.querySelector("#current-temp");
+//let farTemp = Math.round((temperature * 9) / 5 + 32);
+//temperatureElement.innerHTML = `${farTemp}`;
+//}
+
+//function convertToCelsius(event) {
+//  event.preventDefault();
+// let temperatureElement = document.querySelector("#temperature");
+//  temperatureElement.innerHTML = temperature;
+//}
