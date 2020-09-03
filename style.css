@@ -30,15 +30,18 @@ h2 {
   font-size: medium;
 }
 h3 {
-  font-weight: lighter;
+  font-weight: 30px;
 }
-
+h5 {
+  font-size: 15px;
+}
 input {
   background: rgba(234, 255, 208, 0.15);
   color: #757575;
   border: 2px solid #f38181;
   border-radius: 3px;
   padding: 5px;
+  max-width: 120px;
 }
 input:focus {
   background: #95e1d3;
@@ -53,6 +56,7 @@ button {
   padding: 5px;
   margin: 5px;
   box-shadow: 10px 10px 4px -8px rgba(0, 0, 0, 0.57);
+  float: right;
 }
 button:hover {
   background: #95e1d3;
@@ -73,14 +77,17 @@ form {
   padding: 2px;
 }
 .change-city {
-  max-width: 80%;
-  display: inline;
   margin: 0 0 10px 0;
 }
 .container {
   margin-top: 30px;
 }
-
+.weather-app-wrapper {
+  max-width: 900px;
+  border: 1px solid #757575;
+  border-radius: 3px;
+  padding: 10px 10px 0px 10px;
+}
 .forecast {
   background: #95e1d3;
   color: #757575;
@@ -114,12 +121,6 @@ form {
 #app-box {
   background: rgba(234, 255, 208, 0.2);
   border: 5px solid #f38181;
-}
-#activate-search {
-  display: inline;
-}
-#current-location {
-  text-align: right;
 }
 
 #current-weather {

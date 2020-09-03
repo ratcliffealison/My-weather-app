@@ -24,88 +24,99 @@
 
   <body>
     <div class="container">
-      <div class="card" id="app-box">
-        <div class="row" id="top-row">
-          <div class="col-4" id="current-location">
-            <h2 id="local-time">17:52</h2>
-            <h1 id="current-city">Zaragoza</h1>
-            <h3 id="current-date">Thursday 30th July</h3>
-          </div>
-          <div class="col-5" id="current-weather">
-            <i class="fas fa-circle" id="current-weather-icon"></i>
-            <h3 id="description">Clear skies</h3>
-            <span class="current-temp-conversion">
-              <h2 id="current-temp">40</h2>
-              <a class="btn" id="celcius-link" href="#">ºC</a>
-              <a class="btn" id="fahrenheit-link" href="#">ºF</a>
-            </span>
-          </div>
-          <div class="col-3">
-            <form id="city-search">
-              <input type="text" id="search-input" placeholder="change city" />
-              <input type="submit" id="search-submit" value="🔎" />
-            </form>
-            <button id="current-location-button">📍</button>
-          </div>
-        </div>
-      </div>
-      <div class="row" id="middle-row">
-        <div class="col-1"></div>
-        <div class="col-2" id="one-day-ahead">
-          <div class="card forecast" style="width: 100%">
-            <div class="card-body">
-              <h5 class="card-title">Friday</h5>
-              <i class="fas fa-cloud-sun forecast-icon"></i>
-              <p class="card-text">31ºC</p>
+      <div class="weather-app-wrapper">
+        <div class="card" id="app-box">
+          <div class="row" id="top-row">
+            <div class="col-4" id="current-location">
+              <h2 id="local-time">17:52</h2>
+              <h1 id="current-city">Zaragoza</h1>
+              <h3 id="current-date">Thursday 30th July</h3>
+            </div>
+            <div class="col-5" id="current-weather">
+              <i class="fas fa-circle" id="current-weather-icon"></i>
+              <h3 id="description">Clear skies</h3>
+              <div class="clearfix current-temp-conversion">
+                <h2 class="float-center" id="current-temp">40</h2>
+                <a class="btn float-center" id="celcius-link" href="#">ºC</a>
+                <a class="btn float-center" id="fahrenheit-link" href="#">ºF</a>
+              </div>
+            </div>
+            <div class="col-3">
+              <form id="city-search">
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="change city"
+                />
+                <input type="submit" id="search-submit" value="🔎" />
+              </form>
+              <button id="current-location-button">📍</button>
             </div>
           </div>
         </div>
-        <div class="col-2" id="two-days-ahead">
-          <div class="card forecast" style="width: 100%">
-            <div class="card-body">
-              <h5 class="card-title">Saturday</h5>
-              <i class="fas fa-cloud-sun-rain forecast-icon"></i>
-              <p class="card-text">31ºC</p>
+        <div class="row" id="middle-row">
+          <div class="col-1"></div>
+          <div class="col-2" id="one-day-ahead">
+            <div class="card forecast" style="width: 100%">
+              <div class="card-body">
+                <h5 class="card-title">Friday</h5>
+                <i class="fas fa-cloud-sun forecast-icon"></i>
+                <p class="card-text">31ºC</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-2" id="three-days-ahead">
-          <div class="card forecast" style="width: 100%">
-            <div class="card-body">
-              <h5 class="card-title">Sunday</h5>
-              <i class="fas fa-circle forecast-icon"></i>
-              <p class="card-text">36ºC</p>
+          <div class="col-2" id="two-days-ahead">
+            <div class="card forecast" style="width: 100%">
+              <div class="card-body">
+                <h5 class="card-title">Saturday</h5>
+                <i class="fas fa-cloud-sun-rain forecast-icon"></i>
+                <p class="card-text">31ºC</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-2" id="four-days-ahead">
-          <div class="card forecast" style="width: 100%">
-            <div class="card-body">
-              <h5 class="card-title">Monday</h5>
-              <i class="fas fa-cloud-rain forecast-icon"></i>
-              <p class="card-text">34ºC</p>
+          <div class="col-2" id="three-days-ahead">
+            <div class="card forecast" style="width: 100%">
+              <div class="card-body">
+                <h5 class="card-title">Sunday</h5>
+                <i class="fas fa-circle forecast-icon"></i>
+                <p class="card-text">36ºC</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-2" id="five-days-ahead">
-          <div class="card forecast" style="width: 100%">
-            <div class="card-body">
-              <h5 class="card-title">Tuesday</h5>
-              <i class="fas fa-cloud-sun forecast-icon"></i>
-              <p class="card-text">40ºC</p>
+          <div class="col-2" id="four-days-ahead">
+            <div class="card forecast" style="width: 100%">
+              <div class="card-body">
+                <h5 class="card-title">Monday</h5>
+                <i class="fas fa-cloud-rain forecast-icon"></i>
+                <p class="card-text">34ºC</p>
+              </div>
             </div>
           </div>
+          <div class="col-2" id="five-days-ahead">
+            <div class="card forecast" style="width: 100%">
+              <div class="card-body">
+                <h5 class="card-title">Tuesday</h5>
+                <i class="fas fa-cloud-sun forecast-icon"></i>
+                <p class="card-text">40ºC</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
         </div>
-        <div class="col-1"></div>
-      </div>
-      <div class="row" id="bottom-row">
-        <div class="col-12">
-          <p class="coded-by">
-            coded by
-            <a href="http://www.linkedin.com/ratcliffealison" target="_blank">
-              Alison Ratcliffe
-            </a>
-          </p>
+        <div class="row" id="bottom-row">
+          <div class="col-12">
+            <p class="coded-by">
+              <a
+                href="https://github.com/ratcliffealison/My-weather-app"
+                target="_blank"
+                >Open source code</a
+              >
+              by
+              <a href="http://www.linkedin.com/ratcliffealison" target="_blank">
+                Alison Ratcliffe
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
