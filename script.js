@@ -68,14 +68,19 @@ formatTime();
 let temperature = 0;
 function displayWeather(response) {
   console.log(response);
+
   let currentCity = document.querySelector("#current-city");
-  currentCity.innerHTML = response.data.name;
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
   let weatherDescription = document.querySelector("#description");
-  weatherDescription.innerHTML = response.data.weather[0].main;
   let iconElement = document.querySelector("#current-weather-icon");
   let iconSource = response.data.weather[0].icon;
+
+  celciusTemperature = response.data.main.temp;
+
+  currentCity.innerHTML = response.data.name;
+  currentTemp.innerHTML = Math.round(celciusTemperature);
+  weatherDescription.innerHTML = response.data.weather[0].main;
+
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${iconSource}@2x.png`
@@ -99,14 +104,15 @@ citySearchElement.addEventListener("submit", handleSubmit);
 
 //location weather
 function showTemperature(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
   let currentTempElement = document.querySelector("#current-temp");
-  currentTempElement.innerHTML = `${temperature}`;
   let currentLocationElement = document.querySelector("#current-city");
-  currentLocationElement.innerHTML = response.data.name;
   let weatherDescriptionElement = document.querySelector("#description");
+
+  celciusTemperature = temperature;
+
+  currentTempElement.innerHTML = `${celciusTemperature}`;
+  currentLocationElement.innerHTML = response.data.name;
   weatherDescriptionElement.innerHTML = response.data.weather[0].main;
 }
 function showPosition(position) {
@@ -123,16 +129,30 @@ function getCurrentPosition() {
 let locationButton = document.querySelector("#current-location-button");
 locationButton.addEventListener("click", getCurrentPosition);
 
-//temperaure conversion- need to fix
-//function convertToFahrenheit(event) {
-// event.preventDefault();
-//  let temperatureElement = document.querySelector("#current-temp");
-//let farTemp = Math.round((temperature * 9) / 5 + 32);
-//temperatureElement.innerHTML = `${farTemp}`;
-//}
+//temperaure conversions
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
 
-//function convertToCelsius(event) {
-//  event.preventDefault();
-// let temperatureElement = document.querySelector("#temperature");
-//  temperatureElement.innerHTML = temperature;
-//}
+  celciusLink.classList.remove("active");
+  farLink.classList.add("active");
+
+  let farTemp = Math.round((celciusTemperature * 9) / 5 + 32);
+  temperatureElement.innerHTML = `${farTemp}`;
+}
+
+let celciusTemperature = null;
+
+let farLink = document.querySelector("#fahrenheit-link");
+farLink.addEventListener("click", displayFahrenheit);
+
+function displayCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+
+  celciusLink.classList.add("active");
+  farLink.classList.remove("active");
+}
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelcius);

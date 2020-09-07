@@ -10,17 +10,14 @@ p {
   font-weight: 300;
   text-transform: uppercase;
 }
+
 a,
+a:active,
 a:visited,
-a:active {
+a:link {
   color: #757575;
-  text-decoration: none;
 }
-a:hover {
-  font-weight: bold;
-  color: #757575;
-  text-decoration: underline;
-}
+
 h1 {
   font-size: xx-large;
   font-weight: 900;
@@ -83,6 +80,16 @@ form {
 .container {
   margin-top: 30px;
 }
+.coded-by,
+.coded-by:visited,
+.coded-by:active {
+  text-decoration: none;
+}
+a.coded-by:hover {
+  font-weight: bold;
+  color: #757575;
+  text-decoration: underline;
+}
 .weather-app-wrapper {
   max-width: 900px;
   border: 1px solid #757575;
@@ -98,6 +105,18 @@ form {
 .forecast:hover {
   border: 3px solid #f38181;
   transition-duration: 0.4s;
+}
+
+.units .active {
+  text-decoration: none;
+  cursor: default;
+  font-weight: bolder;
+}
+
+.units .active:hover {
+  text-decoration: none;
+  cursor: default;
+  font-weight: bolder;
 }
 
 #current-weather {
