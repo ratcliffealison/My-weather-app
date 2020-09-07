@@ -35,6 +35,7 @@ h3 {
 h5 {
   font-size: 15px;
 }
+
 input {
   background: rgba(234, 255, 208, 0.15);
   color: #757575;
@@ -71,7 +72,7 @@ form {
 }
 
 .forecast-icon {
-  font-size: 80px;
+  font-size: 4vw;
   display: block;
   color: #fce38a;
   padding: 2px;
@@ -106,8 +107,9 @@ form {
   border-color: #f38181;
 }
 #current-weather-icon {
-  font-size: 140px;
+  width: 140px;
   display: block;
+  margin: 0 auto;
   color: #fce38a;
 }
 #current-weather-icon:hover {

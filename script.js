@@ -74,6 +74,13 @@ function displayWeather(response) {
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   let weatherDescription = document.querySelector("#description");
   weatherDescription.innerHTML = response.data.weather[0].main;
+  let iconElement = document.querySelector("#current-weather-icon");
+  let iconSource = response.data.weather[0].icon;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconSource}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 function searchCity(cityInput) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
@@ -95,12 +102,12 @@ function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${temperature}`;
-  let currentLocation = document.querySelector("#current-city");
-  currentLocation.innerHTML = response.data.name;
-  let weatherDescription = document.querySelector("#description");
-  weatherDescription.innerHTML = response.data.weather[0].main;
+  let currentTempElement = document.querySelector("#current-temp");
+  currentTempElement.innerHTML = `${temperature}`;
+  let currentLocationElement = document.querySelector("#current-city");
+  currentLocationElement.innerHTML = response.data.name;
+  let weatherDescriptionElement = document.querySelector("#description");
+  weatherDescriptionElement.innerHTML = response.data.weather[0].main;
 }
 function showPosition(position) {
   let latitude = position.coords.latitude;
