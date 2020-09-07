@@ -14,7 +14,7 @@ a,
 a:visited,
 a:active {
   color: #757575;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   font-weight: bold;
@@ -125,8 +125,8 @@ form {
   border: 5px solid #f38181;
 }
 
-#current-weather {
-  text-align: center;
+#current-location {
+  text-align: right;
 }
 #top-row {
   padding: 20px;

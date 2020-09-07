@@ -87,15 +87,15 @@ function searchCity(cityInput) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayWeather);
 }
-
+searchCity("London");
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-input").value;
   searchCity(cityInput);
 }
 
-let citySearch = document.querySelector("#city-search");
-citySearch.addEventListener("submit", handleSubmit);
+let citySearchElement = document.querySelector("#city-search");
+citySearchElement.addEventListener("submit", handleSubmit);
 
 //location weather
 function showTemperature(response) {
