@@ -40,11 +40,13 @@
               />
               <h3 id="description">Clear skies</h3>
               <div class="clearfix current-temp-conversion">
-                <h2 id="current-temp">40</h2>
-                <span class="units"
-                  ><a class="active" id="celcius-link" href="#">ºC </a>
-                  <a id="fahrenheit-link" href="#">| ºF</a>
-                </span>
+                <p>
+                  <span id="current-temp">40</span>
+                  <span>
+                    <a class="active" id="celcius-link" href="#">ºC</a>
+                    | <a id="fahrenheit-link" href="#">ºF</a></span
+                  >
+                </p>
               </div>
             </div>
             <div class="col-3">
@@ -64,55 +66,7 @@
             </div>
           </div>
         </div>
-        <div class="row" id="middle-row">
-          <div class="col-1"></div>
-          <div class="col-2" id="one-day-ahead">
-            <div class="card forecast" style="width: 100%">
-              <div class="card-body">
-                <h5 class="card-title">Friday</h5>
-                <i class="fas fa-cloud-sun forecast-icon"></i>
-                <p class="card-text">31ºC</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-2" id="two-days-ahead">
-            <div class="card forecast" style="width: 100%">
-              <div class="card-body">
-                <h5 class="card-title">Saturday</h5>
-                <i class="fas fa-cloud-sun-rain forecast-icon"></i>
-                <p class="card-text">31ºC</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-2" id="three-days-ahead">
-            <div class="card forecast" style="width: 100%">
-              <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
-                <i class="fas fa-circle forecast-icon"></i>
-                <p class="card-text">36ºC</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-2" id="four-days-ahead">
-            <div class="card forecast" style="width: 100%">
-              <div class="card-body">
-                <h5 class="card-title">Monday</h5>
-                <i class="fas fa-cloud-rain forecast-icon"></i>
-                <p class="card-text">34ºC</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-2" id="five-days-ahead">
-            <div class="card forecast" style="width: 100%">
-              <div class="card-body">
-                <h5 class="card-title">Tuesday</h5>
-                <i class="fas fa-cloud-sun forecast-icon"></i>
-                <p class="card-text">40ºC</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-1"></div>
-        </div>
+        <div class="row" id="forecast"></div>
         <div class="row" id="bottom-row">
           <div class="col-12">
             <p>

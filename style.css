@@ -67,7 +67,9 @@ form {
   margin: 5px;
   text-align: right;
 }
-
+.active {
+  font-weight: 500;
+}
 .forecast-icon {
   font-size: 4vw;
   display: block;
@@ -76,6 +78,8 @@ form {
 }
 .change-city {
   margin: 0 0 10px 0;
+}
+.card-body {
 }
 .container {
   margin-top: 30px;
@@ -151,7 +155,7 @@ a.coded-by:hover {
   padding: 20px;
   position: relative;
 }
-#middle-row {
+#forecast {
   padding: 10px;
 }
 #bottom-row {
