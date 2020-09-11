@@ -207,9 +207,10 @@ function displayFahrenheit(event) {
     let currentTemp = item.innerHTML;
     item.innerHTML = `${Math.round((currentTemp * 9) / 5 + 32)}`;
   });
-}
 
-let celciusTemperature = null;
+  farLink.removeEventListener("click", displayFahrenheit);
+  celciusLink.addEventListener("click", displayCelcius);
+}
 
 let farLink = document.querySelector("#fahrenheit-link");
 farLink.addEventListener("click", displayFahrenheit);
@@ -234,6 +235,8 @@ function displayCelcius(event) {
     let currentTemp = item.innerHTML;
     item.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
   });
+  farLink.addEventListener("click", displayFahrenheit);
+  celciusLink.removeEventListener("click", displayCelcius);
 }
 
 let celciusLink = document.querySelector("#celcius-link");
