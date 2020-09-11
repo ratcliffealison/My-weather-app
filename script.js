@@ -1,6 +1,6 @@
 let apiKey = "c1839181c76825494afbe0248f476ab5";
 
-//time and date
+//date and time
 function formatDate() {
   let now = new Date();
 
@@ -32,16 +32,13 @@ function formatDate() {
   let month = months[now.getMonth()];
   if (date === 1 || date === 21 || date === 31) {
     return `${day} ${date}st ${month}`;
+  }
+    return `${day} ${date}nd ${month}`;
+  }
+  if (date === 3 || date === 23) {
+    return `${day} ${date}rd ${month}`;
   } else {
-    if (date === 2 || date === 22) {
-      return `${day} ${date}nd ${month}`;
-    } else {
-      if (date === 3 || date === 23) {
-        return `${day} ${date}rd ${month}`;
-      } else {
-        return `${day} ${date}th ${month}`;
-      }
-    }
+    return `${day} ${date}th ${month}`;
   }
 }
 let currentDate = document.querySelector("#current-date");
@@ -112,6 +109,8 @@ function displayForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
+    let minForecast = forecast.main.temp_min;
+    let maxForecast = forecast.main.temp_max;
     forecastElement.innerHTML += `
   <div class="col-2" >
     <div class="card forecast" style="width: 100%">
@@ -123,9 +122,10 @@ function displayForecast(response) {
 
         <div class="forecast-temperature">
 
-        <strong>${Math.round(forecast.main.temp_max)}ºC</strong>
+        <b> <span class="min-hourly-degrees"> 
+        ${Math.round(maxForecast)}</span>ºC</b>
          | 
-         ${Math.round(forecast.main.temp_min)}ºC
+         <span class="max-hourly-degrees"> ${Math.round(minForecast)}</span>ºC
          </div>
       </div>
     </div>
@@ -183,6 +183,8 @@ let locationButton = document.querySelector("#current-location-button");
 locationButton.addEventListener("click", getCurrentPosition);
 
 //temperaure conversions
+//celcius > farenheit
+
 function displayFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
@@ -192,12 +194,26 @@ function displayFahrenheit(event) {
 
   let farTemp = Math.round((celciusTemperature * 9) / 5 + 32);
   temperatureElement.innerHTML = `${farTemp}`;
+
+  let minForecastItems = document.querySelectorAll(".min-hourly-degrees");
+  minForecastItems.forEach(function (item) {
+    let currentTemp = item.innerHTML;
+    console.log(currentTemp);
+    item.innerHTML = `${Math.round((currentTemp * 9) / 5 + 32)}`;
+  });
+  let maxForecastItems = document.querySelectorAll(".max-hourly-degrees");
+  maxForecastItems.forEach(function (item) {
+    let currentTemp = item.innerHTML;
+    item.innerHTML = `${Math.round((currentTemp * 9) / 5 + 32)}`;
+  });
 }
 
 let celciusTemperature = null;
 
 let farLink = document.querySelector("#fahrenheit-link");
 farLink.addEventListener("click", displayFahrenheit);
+
+//fahrenheit >> celcius
 
 function displayCelcius(event) {
   event.preventDefault();
@@ -206,6 +222,18 @@ function displayCelcius(event) {
 
   celciusLink.classList.add("active");
   farLink.classList.remove("active");
+
+  let minForecastItems = document.querySelectorAll(".min-hourly-degrees");
+  minForecastItems.forEach(function (item) {
+    let currentTemp = item.innerHTML;
+    item.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
+  });
+  let maxForecastItems = document.querySelectorAll(".max-hourly-degrees");
+  maxForecastItems.forEach(function (item) {
+    let currentTemp = item.innerHTML;
+    item.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
+  });
 }
+
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelcius);
