@@ -33,6 +33,7 @@ function formatDate() {
   if (date === 1 || date === 21 || date === 31) {
     return `${day} ${date}st ${month}`;
   }
+  if (date === 2 || date === 22) {
     return `${day} ${date}nd ${month}`;
   }
   if (date === 3 || date === 23) {
