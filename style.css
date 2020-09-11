@@ -89,6 +89,13 @@ form {
 .container {
   margin-top: 30px;
 }
+.col-2 {
+  text-align: center;
+}
+
+.col-2 img {
+  width: 100%;
+}
 .coded-by,
 .coded-by:visited,
 .coded-by:active {
