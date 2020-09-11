@@ -87,7 +87,7 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
 }
-
+//forecast time
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -107,9 +107,12 @@ function displayForecast(response) {
   console.log(response.data);
 
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
+  let forecast = null;
+  forecastElement.innerHTML = null;
 
-  forecastElement.innerHTML = `
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
   <div class="col-2" >
     <div class="card forecast" style="width: 100%">
       <div class="card-body">
@@ -118,16 +121,17 @@ function displayForecast(response) {
           forecast.weather[0].icon
         }@2x.png" id="forecast-icon" alt="${forecast.weather[0].description}">
 
-        <p class="card-text">
+        <div class="forecast-temperature">
 
-        <span>${Math.round(forecast.main.temp_max)}ºC</span>
+        <strong>${Math.round(forecast.main.temp_max)}ºC</strong>
          | 
-         <span>${Math.round(forecast.main.temp_min)}ºC</span>
-         </p>
+         ${Math.round(forecast.main.temp_min)}ºC
+         </div>
       </div>
     </div>
   </div>
   `;
+  }
 }
 
 function searchCity(cityInput) {
@@ -167,6 +171,9 @@ function showPosition(position) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
