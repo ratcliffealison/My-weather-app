@@ -240,4 +240,3 @@ function displayCelcius(event) {
 }
 
 let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelcius);
