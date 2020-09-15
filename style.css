@@ -76,12 +76,6 @@ form {
   cursor: default;
 }
 
-.forecast-icon {
-  font-size: 4vw;
-  display: block;
-  color: #fce38a;
-  padding: 2px;
-}
 .change-city {
   margin: 0 0 10px 0;
 }
