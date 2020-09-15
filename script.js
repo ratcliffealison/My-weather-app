@@ -180,9 +180,6 @@ function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let locationButton = document.querySelector("#current-location-button");
-locationButton.addEventListener("click", getCurrentPosition);
-
 //temperaure conversions
 //celcius > farenheit
 
