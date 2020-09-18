@@ -124,9 +124,9 @@ function displayForecast(response) {
         <div class="forecast-temperature">
 
         <b> <span class="min-hourly-degrees"> 
-        ${Math.round(maxForecast)}</span>ºC</b>
+        ${Math.round(maxForecast)}</span>º</b>
          | 
-         <span class="max-hourly-degrees"> ${Math.round(minForecast)}</span>ºC
+         <span class="max-hourly-degrees"> ${Math.round(minForecast)}</span>º
          </div>
       </div>
     </div>
